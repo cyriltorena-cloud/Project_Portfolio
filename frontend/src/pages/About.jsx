@@ -1,11 +1,17 @@
-function About() {
+
+function About({ portfolioData }) {
+  const name = portfolioData?.name || "Cyril Toreña";
+  const education =
+    portfolioData?.education ||
+    "Laguna State Polytechnic University";
+
   return (
     <section className="section">
       <h2>About Me</h2>
 
       <p>
-        I am Cyril Toreña, a 3rd year Bachelor of Science in Information
-        Technology student at Laguna State Polytechnic University.
+        I am {name}, a 3rd year Bachelor of Science in Information
+        Technology student at {education}.
       </p>
 
       <p>

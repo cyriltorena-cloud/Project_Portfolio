@@ -1,3 +1,5 @@
+
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import Home from "./pages/Home";
@@ -10,6 +12,39 @@ import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 
 function App() {
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/portfolio")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch portfolio data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPortfolioData(data);
+        console.log("Portfolio Data:", data);
+      })
+      .catch((error) => {
+        console.error("API Connection Error:", error);
+        setError("Unable to connect to the portfolio server.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div className="app">Loading portfolio...</div>;
+  }
+
+  if (error) {
+    return <div className="app">{error}</div>;
+  }
+
   return (
     <div className="app">
 
@@ -31,52 +66,44 @@ function App() {
         </div>
       </nav>
 
-
       {/* Home */}
       <div id="home">
-        <Home />
+        <Home portfolioData={portfolioData} />
       </div>
-
 
       {/* About */}
       <div id="about">
-        <About />
+        <About portfolioData={portfolioData} />
       </div>
-
 
       {/* Skills */}
       <div id="skills">
-        <Skills />
+        <Skills portfolioData={portfolioData} />
       </div>
-
 
       {/* Projects */}
       <div id="projects">
-        <Projects />
+        <Projects portfolioData={portfolioData} />
       </div>
-
 
       {/* Education */}
       <div id="education">
-        <Education />
+        <Education portfolioData={portfolioData} />
       </div>
-
 
       {/* Certificates */}
       <div id="certificates">
-        <Certificates />
+        <Certificates portfolioData={portfolioData} />
       </div>
 
-
-      {/* Resume / CV */}
+      {/* Resume */}
       <div id="resume">
-        <Resume />
+        <Resume portfolioData={portfolioData} />
       </div>
-
 
       {/* Contact */}
       <div id="contact">
-        <Contact />
+        <Contact portfolioData={portfolioData} />
       </div>
 
     </div>

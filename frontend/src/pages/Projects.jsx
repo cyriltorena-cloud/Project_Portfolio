@@ -1,4 +1,7 @@
-function Projects() {
+
+function Projects({ portfolioData }) {
+  const projects = portfolioData?.projects || [];
+
   return (
     <section className="section">
       <h2>Projects</h2>
@@ -8,31 +11,12 @@ function Projects() {
       </p>
 
       <div className="project-container">
-
-        <div className="project-card">
-          <h3>Multi-page React Portfolio Website</h3>
-          <p>
-            A personal portfolio website developed using React
-            to showcase my skills, projects, education, and certificates.
-          </p>
-        </div>
-
-        <div className="project-card">
-          <h3>Django Backend Integration</h3>
-          <p>
-            A backend project using Django for handling application
-            logic and backend functionality.
-          </p>
-        </div>
-
-        <div className="project-card">
-          <h3>Networking & Cybersecurity Lab Exercises</h3>
-          <p>
-            Academic activities involving networking configuration,
-            troubleshooting, and basic cybersecurity concepts.
-          </p>
-        </div>
-
+        {projects.map((project) => (
+          <div className="project-card" key={project.id}>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

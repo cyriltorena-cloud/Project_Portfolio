@@ -1,76 +1,36 @@
-function Certificates() {
+
+function Certificates({ portfolioData }) {
+  const certificates = portfolioData?.certificates || [];
+
   return (
     <section className="section">
       <h2>Certificates & Achievements</h2>
 
       <div className="certificate-container">
+        {certificates.map((certificate) => (
+          <div className="certificate-card" key={certificate.id}>
+            <h3>{certificate.title}</h3>
 
-        {/* Certificate 1 */}
-        <div className="certificate-card">
-          <h3>Getting Started with Cisco Packet Tracer</h3>
+            <p>{certificate.issuer}</p>
 
-          <p>
-            Networking Academy through the Cisco Networking Academy program
-          </p>
+            {certificate.completionDate && (
+              <p className="certificate-date">
+                Completion Date: {certificate.completionDate}
+              </p>
+            )}
 
-          <p className="certificate-date">
-            Completion Date: February 1, 2026
-          </p>
-
-          <a
-            href="/certificates/getting-started-cisco-packet-tracer.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="certificate-button"
-          >
-            View Certificate
-          </a>
-        </div>
-
-        {/* Certificate 2 */}
-        <div className="certificate-card">
-          <h3>Exploring Networking with Cisco Packet Tracer</h3>
-
-          <p>
-            Networking Academy through the Cisco Networking Academy program
-          </p>
-
-          <p className="certificate-date">
-            Completion Date: February 1, 2026
-          </p>
-
-          <a
-            href="/certificates/exploring-networking-cisco-packet-tracer.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="certificate-button"
-          >
-            View Certificate
-          </a>
-        </div>
-
-        {/* Certificate 3 */}
-        <div className="certificate-card">
-          <h3>Exploring Internet of Things with Cisco Packet Tracer</h3>
-
-          <p>
-            Networking Academy through the Cisco Networking Academy program
-          </p>
-
-          <p className="certificate-date">
-            Completion Date: February 1, 2026
-          </p>
-
-          <a
-            href="/certificates/exploring-iot-cisco-packet-tracer.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="certificate-button"
-          >
-            View Certificate
-          </a>
-        </div>
-
+            {certificate.fileUrl && (
+              <a
+                href={certificate.fileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="certificate-button"
+              >
+                View Certificate
+              </a>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

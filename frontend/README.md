@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio website developed to showcase my background, skills, educational journey, projects, certificates, and professional interests as a Bachelor of Science in Information Technology student.
 
-## Available Scripts
+The project uses **React.js** for the frontend and **Django** for the backend.
 
-In the project directory, you can run:
+## About the Project
 
-### `npm start`
+This portfolio serves as a platform to present my personal information, technical skills, academic background, projects, and achievements in the field of Information Technology.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It is designed to provide visitors with an organized and accessible way to explore my experiences and capabilities.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Home** – Introduction and portfolio landing page.
+- **About** – Personal background and information.
+- **Education** – Academic background.
+- **Skills** – Technical skills and capabilities.
+- **Projects** – Academic and personal projects.
+- **Certificates** – Certificates and achievements.
+- **Resume** – View and download resume.
+- **Contact** – Contact information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+### Frontend
+- React.js
+- JavaScript
+- HTML5
+- CSS3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
+- Python
+- Django
+- SQLite
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Development Tools
+- Visual Studio Code
+- Git
+- GitHub
+- Node.js and npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```text
+Project_Portfolio/
+│
+├── backend/
+│   ├── api/
+│   ├── config/
+│   ├── manage.py
+│   └── db.sqlite3
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   └── pages/
+│   ├── package.json
+│   └── package-lock.json
+│
+└── .gitignore
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation and Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/cyriltorena-cloud/Project_Portfolio.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Navigate to the Project Folder
 
-## Learn More
+```bash
+cd Project_Portfolio
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Setup the Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd frontend
+npm install
+```
 
-### Code Splitting
+Start the frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+The React application will normally run at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```text
+http://localhost:3000
+```
 
-### Making a Progressive Web App
+### 4. Setup the Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open another terminal and navigate to the backend folder:
 
-### Advanced Configuration
+```bash
+cd backend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Activate your Python virtual environment and install the project's required Python dependencies before running Django.
 
-### Deployment
+Run database migrations:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+python manage.py migrate
+```
 
-### `npm run build` fails to minify
+Start the Django development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+python manage.py runserver
+```
+
+The backend will normally run at:
+
+```text
+http://127.0.0.1:8000/
+```
+
+## Developer
+
+**Cyril Toreña**
+
+Bachelor of Science in Information Technology  
+Laguna State Polytechnic University
+
+### Areas of Interest
+- Networking
+- Cybersecurity
+- Web Development
+- Video Editing
+- Creative Writing and Photography
+
+---
+
+*This project is developed as part of my personal learning journey and professional portfolio in Information Technology.*
