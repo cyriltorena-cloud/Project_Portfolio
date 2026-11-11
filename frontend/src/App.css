@@ -944,3 +944,156 @@ a {
     margin-bottom: 10px;
   }
 }
+
+/* =========================
+   PROJECT MANAGEMENT - CRUD
+========================= */
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.project-actions button,
+.project-form-actions button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.project-edit-btn {
+  background-color: var(--medium-blue);
+  color: var(--white);
+}
+
+.project-edit-btn:hover {
+  background-color: var(--deep-blue);
+}
+
+.project-delete-btn {
+  background-color: #b94343;
+  color: var(--white);
+}
+
+.project-delete-btn:hover {
+  background-color: #8f2929;
+}
+
+.project-manager {
+  margin-top: 45px;
+  padding: 30px;
+  background-color: var(--white);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 8px;
+}
+
+.project-manager h3 {
+  color: var(--deep-blue);
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.project-manager > p {
+  color: var(--navy-dark);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-form label {
+  color: var(--navy-dark);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 6px;
+  background-color: #f8fbfc;
+  color: var(--navy-dark);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.project-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+  border-color: var(--medium-blue);
+  box-shadow: 0 0 0 2px rgba(58, 124, 165, 0.12);
+}
+
+.project-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.project-save-btn {
+  background-color: var(--medium-blue);
+  color: var(--white);
+}
+
+.project-save-btn:hover {
+  background-color: var(--deep-blue);
+}
+
+.project-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.project-cancel-btn {
+  background-color: #e4edf1;
+  color: var(--navy-dark);
+}
+
+.project-cancel-btn:hover {
+  background-color: #cbdde5;
+}
+
+.project-success {
+  margin-top: 18px;
+  color: #247344;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.project-error {
+  margin-top: 18px;
+  color: #b42318;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* PROJECT MANAGEMENT RESPONSIVE */
+
+@media (max-width: 800px) {
+  .project-manager {
+    padding: 22px;
+  }
+
+  .project-actions {
+    flex-wrap: wrap;
+  }
+}
